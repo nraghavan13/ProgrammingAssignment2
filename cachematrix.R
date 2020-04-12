@@ -10,7 +10,7 @@
 # 4. get the value of the inserve of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-	i <- NULL
+    i <- NULL
     set <- function(y) {
         x <<- y
         i <<- NULL
@@ -31,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
 # Output: Inverse of original "matrix" object
 
 cacheSolve <- function(x, ...) {
-	i <- x$getinverse()
+    i <- x$getinverse()
     if(!is.null(i)) {
     	message("getting cached data.")
         return(i)
