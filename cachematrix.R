@@ -1,6 +1,6 @@
-# Matrix inversion is computationally intensitve and optimized by using
-# cache. Cachining the inverse of a matrix is more efficient 
-# than an iterative process of performing matrix inversions. 
+# Matrix inversion is computationally intensitve and can be optimized
+# using cache. Cachining the inverse of a matrix is more efficient 
+# than an iterative process of repeatedly computing matrix inversions. 
 
 # makeCacheMatrix creates a special "matrix" object which performs
 # the following functions:
@@ -37,7 +37,9 @@ cacheSolve <- function(x, ...) {
         return(i)
     }
     data <- x$get()
-    i <- solve(data)
+    i <- solve(data, ...)
     x$setinverse(i)
+
+    ## Return a matrix that is the inverse of 'x'
     return(i)
 }
